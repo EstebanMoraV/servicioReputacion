@@ -33,24 +33,6 @@ public class ReputacionController {
         return ResponseEntity.ok(reputaciones);
     }
 
-    @GetMapping("/usuario/{idUsuario}")
-    public ResponseEntity<List<Reputacion>> obtenerReputacionesPorUsuario(@PathVariable Integer idUsuario) {
-        List<Reputacion> reputaciones = reputacionService.obtenerReputacionesPorUsuario(idUsuario);
-        if (reputaciones.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(reputaciones);
-    }
-
-    @GetMapping("/estado/{estado}")
-    public ResponseEntity<List<Reputacion>> obtenerReputacionesPorEstado(@RequestBody String estado) {
-        List<Reputacion> reputaciones = reputacionService.obtenerReputacionesPorEstado(estado);
-        if (reputaciones.isEmpty()) {
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.ok(reputaciones);
-    }
-
     @GetMapping("/{id}")
     public ResponseEntity<Reputacion> obtenerReputacionPorId(@PathVariable Integer id) {
         Reputacion reputacion = reputacionService.obtenerReputacionPorId(id);

@@ -21,13 +21,6 @@ public class ReputacionService {
         return reputacionRepo.findAll();
     }
 
-    public List<Reputacion> obtenerReputacionesPorUsuario(Integer idUsuario) {
-        return reputacionRepo.findByUsuario(idUsuario);
-    }
-
-    public List<Reputacion> obtenerReputacionesPorEstado(String estado) {
-        return reputacionRepo.findByEstado(estado);
-    }
 
     public Reputacion obtenerReputacionPorId(Integer id) {
         return reputacionRepo.findById(id).orElse(null);
